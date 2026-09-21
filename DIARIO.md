@@ -1054,3 +1054,15 @@ del relatore per il video). Scelte principali:
   frequenza, spin residuo ~26% a wind_mag=0.15 fuori distribuzione).
 
 Materiali di consegna: repository pubblica, presentazione (.pptx + .mp4), diario.
+
+## [21-09-2026] Statistiche dei linguaggi su GitHub
+
+- Problema: la barra dei linguaggi indicava ~91% Jupyter Notebook.
+- Misura: i notebook pesano ~489 KB, di cui ~456 KB di output incorporati
+  (figure base64), ~22 KB di markdown e solo ~11 KB di codice (Python).
+  I file .py in src/ e scripts/ sono ~45 KB, gli .sh ~5 KB.
+- Decisione: aggiunto .gitattributes con `*.ipynb linguist-detectable=false`.
+- Alternative scartate: `linguist-vendored` (dichiarerebbe come codice di terzi
+  codice mio); svuotare gli output (perderei la prova di esecuzione); spostare i
+  notebook (romperebbe struttura e percorsi).
+- Esito atteso: barra ~90% Python, ~10% Shell. Nessun file del progetto modificato.
